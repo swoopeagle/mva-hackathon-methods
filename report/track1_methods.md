@@ -3,7 +3,7 @@
 **Team / HF user:** `swoopeagle` (checkpoint-charlie)
 **Challenge:** Rare Disease, Real Kid — The MVA Hackathon 2026 (Sage Bionetworks / MVA Society / Hugging Face / BEACON)
 **Proband:** EX2312012
-**Code:** <TODO: public repo URL — see `PUBLIC_REPO_PLAN.md`>
+**Code:** https://github.com/swoopeagle/mva-hackathon-methods
 **Report version:** draft, 2026-08-26
 
 ---

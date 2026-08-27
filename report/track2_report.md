@@ -1625,7 +1625,7 @@ depends on it.
 Everything in this submission — code, mechanism node maps, pre-registered rubric, curated drug
 facts, case template, controls, and this report — is released under **CC-BY-4.0**, matching the
 dataset licence and the challenge's open-science posture. Repository:
-`https://github.com/swoopeagle/<public-repo>` *(TODO-at-submission: final repo URL).*
+https://github.com/swoopeagle/mva-hackathon-methods
 
 **One-click reproducible run, no API keys.** Open Targets Platform GraphQL and DGIdb are public
 and unauthenticated. Dependencies are the Python standard library plus `requests` and `PyYAML`.
