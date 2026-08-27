@@ -1,0 +1,34 @@
+# Mechanism node map — CEP57 / MVA2.
+# HONEST RESULT: there is no direct drug node. CEP57 is a centrosomal protein;
+# the lesion is centriole disengagement -> multipolar/merotelic attachment,
+# which is checkpoint-silent. Nothing approved acts on it in the needed
+# direction, and inventing one would be the failure mode this pipeline exists
+# to avoid. Only the generic Objective-B buffering lane is offered, labelled as
+# non-gene-specific.
+meta:
+  gene: CEP57
+  disorder: MVA2 (OMIM 614114)
+  seed_has_approved_drugs: false
+  mechanism: >
+    Mostly homozygous, founder c.915_925dupCAATGTTCAGC in 10/12 reported cases
+    (Snape, Nat Genet 2011, PMID 21552266). Short stature/rhizomelia dominates;
+    minimal PCS; no human cancer reported. Only intervention tried in patients
+    is growth hormone, with limited response.
+no_direct_node: true
+nodes:
+  - id: proteostasis_mito
+    label: Generic aneuploidy buffering (Objective B) — NOT gene-specific
+    target_symbol: null
+    direction_needed: activate
+    objective: B
+    gene_specific: false
+    rationale: >
+      No CEP57-specific druggable node exists. The only defensible lane is the
+      shared downstream buffering of proteostatic/mitochondrial stress in
+      aneuploid cells (Nat Commun 2026), which is not specific to this gene and
+      is reported as such.
+    pmids: [41820377, 21552266]
+    drugs:
+      - name: N-acetylcysteine
+      - name: Coenzyme Q10
+      - name: Idebenone

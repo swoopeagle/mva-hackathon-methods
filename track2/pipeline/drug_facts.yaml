@@ -1,0 +1,181 @@
+# Per-drug curated facts + rubric scores.
+# Scores are 0/1/2 against the SEVEN criteria of track2/RUBRIC.md (pre-registered
+# 2026-08-26, unchanged). Each score carries a one-line justification so a judge
+# can audit the call. Weights live in RUBRIC.md and are applied by score.py.
+#
+# Criteria: 1 directionality(w3) 2 human/model support(w2) 3 approval(w2)
+#           4 pediatric dosing(w2) 5 chronic safety(w2) 6 PD biomarker(w1)
+#           7 falsifiability(w1).  Max weighted = 26. Cutoff = 13.
+
+nicotinamide:
+  approval: "Approved medicine for pellagra / niacin deficiency in multiple regions; also OTC vitamin B3."
+  formulation: "Oral tablet/capsule; oral solution compoundable."
+  pediatric: "Established pediatric dosing for pellagra and B3 deficiency."
+  safety_flags: ["hepatotoxicity at very high chronic doses", "monitor LFTs"]
+  biomarker: "Whole-blood NAD+; fibroblast BubR1 western; CBMN micronucleus frequency."
+  scores:
+    1: [1, "Raises NAD+ upstream of SIRT2->BubR1, but a less direct precursor route than NR; plausible sign, indirect node."]
+    2: [2, "Human interventional evidence in the sibling genome-instability pathway (NAD+ augmentation in A-T, PMID 27732836 / 37899683)."]
+    3: [1, "Approved (pellagra) but not for a route/indication specific to a child with MVA."]
+    4: [2, "Established pediatric dosing guidance exists."]
+    5: [2, "Benign for chronic use with LFT monitoring; not immunosuppressive, not genotoxic, does not aggravate CIN."]
+    6: [2, "Direct target-engagement (NAD+ level) plus micronucleus-responsive readout."]
+    7: [2, "Patient-fibroblast BubR1 western +/- drug specified as the kill experiment."]
+
+nicotinamide riboside:
+  approval: "Not a drug approval anywhere: GRAS / new-dietary-ingredient supplement (Niagen)."
+  formulation: "Oral capsule; opens for sprinkle dosing."
+  pediatric: "Published pediatric use in A-T cohorts (other indication); no dosing guidance."
+  safety_flags: ["supplement-grade QC variability", "no long-term pediatric safety data"]
+  biomarker: "Whole-blood NAD+; fibroblast BubR1 western; CBMN micronucleus frequency."
+  scores:
+    1: [2, "Correct sign at a node with direct evidence in the disease pathway: NAD+ -> SIRT2 -> BubR1 K668 deacetylation -> abundance (PMIDs 24825348, 23242215)."]
+    2: [2, "Human interventional: long-term NR improved coordination/eye movements in A-T (PMID 37899683)."]
+    3: [0, "Not an approved drug in any region."]
+    4: [1, "Published pediatric use in another indication; no established dosing guidance."]
+    5: [2, "Benign chronic profile in trials to date."]
+    6: [2, "Direct target-engagement (NAD+) plus micronucleus-responsive readout."]
+    7: [2, "Patient-fibroblast BubR1 western +/- NR; falsified if BubR1 does not rise."]
+
+sirolimus:
+  approval: "Approved (transplant immunosuppression; lymphangioleiomyomatosis)."
+  formulation: "Oral solution and tablets; oral solution suits a young child."
+  pediatric: "Established trough-guided pediatric dosing (TSC, vascular anomalies)."
+  safety_flags: ["IMMUNOSUPPRESSIVE in a cancer-predisposed, infection-prone child", "growth/metabolic effects", "stomatitis"]
+  biomarker: "p-S6 in PBMC (indirect); sirolimus trough level."
+  caution: "Immunosuppression is the wrong direction for Objective C (chemoprevention). Second-line, low-dose intermittent, biomarker-gated only."
+  scores:
+    1: [1, "Plausible sign at an indirect node: mTORC1 hyperactivation downstream of BubR1 insufficiency; TOR inhibition rescued the fly CIN-microcephaly model."]
+    2: [1, "Model-organism rescue only (Drosophila, PMID 41820377); the BubR1/mTORC1 human link is unverified."]
+    3: [2, "Approved with a pediatric-appropriate oral solution."]
+    4: [2, "Established trough-guided pediatric dosing guidance."]
+    5: [0, "Immunosuppressive in a child with ~1/3 cancer risk before age 5 and infection susceptibility."]
+    6: [1, "p-S6 is indirect target engagement for the disease phenotype."]
+    7: [1, "In-vitro only: p-S6 suppression in patient fibroblasts."]
+
+everolimus:
+  approval: "Approved (TSC-associated SEGA and angiomyolipoma, oncology)."
+  formulation: "Dispersible tablet for oral suspension — pediatric-designed."
+  pediatric: "Established pediatric dosing guidance (TSC, from age 1)."
+  safety_flags: ["immunosuppressive", "stomatitis", "growth/metabolic effects"]
+  biomarker: "p-S6 in PBMC (indirect); everolimus trough level."
+  caution: "Same immunosuppression objection as sirolimus."
+  scores:
+    1: [1, "Same indirect mTORC1 node as sirolimus."]
+    2: [1, "Model-organism rescue only."]
+    3: [2, "Approved with a dispersible pediatric formulation."]
+    4: [2, "Established pediatric dosing guidance from age 1 (TSC)."]
+    5: [0, "Immunosuppressive in a cancer-predisposed child."]
+    6: [1, "p-S6 indirect."]
+    7: [1, "In-vitro only."]
+
+dasatinib:
+  approval: "Approved (Ph+ CML/ALL), including pediatric indications."
+  formulation: "Tablets plus powder for oral suspension."
+  pediatric: "Established pediatric dosing guidance (Ph+ ALL/CML)."
+  safety_flags: ["myelosuppression", "pleural effusion", "growth-plate effects in children", "immunosuppression"]
+  biomarker: "p16/SASP panel (indirect); senescent-cell burden."
+  scores:
+    1: [1, "Plausible sign, indirect: clears senescent cells; the BubR1-H/H mouse founded senolytics (PMID 22048312), but the node is downstream burden, not the mitotic lesion."]
+    2: [1, "Mouse model only for the senolytic effect in this genotype."]
+    3: [2, "Approved with a pediatric oral-suspension formulation."]
+    4: [2, "Established pediatric dosing guidance."]
+    5: [0, "Myelosuppressive, immunosuppressive and growth-plate-active in a growing, cancer-predisposed child, even intermittently."]
+    6: [1, "p16+/SASP panel is indirect."]
+    7: [1, "In-vitro: senescent-cell clearance in patient fibroblasts."]
+
+quercetin:
+  approval: "Not an approved drug: dietary supplement."
+  formulation: "Oral capsule; poor, variable bioavailability."
+  pediatric: "Dietary exposure common; no pediatric therapeutic dosing precedent."
+  safety_flags: ["CYP interactions", "supplement QC variability"]
+  biomarker: "p16/SASP panel (indirect)."
+  scores:
+    1: [1, "Plausible sign, indirect: senolytic partner of dasatinib."]
+    2: [1, "Mouse/cell only."]
+    3: [0, "Not approved anywhere as a drug."]
+    4: [1, "Pediatric dietary/supplement use published, no therapeutic dosing."]
+    5: [2, "Benign for intermittent use."]
+    6: [1, "Indirect only."]
+    7: [1, "In-vitro only."]
+
+fisetin:
+  approval: "Not an approved drug: dietary supplement."
+  formulation: "Oral capsule; bioavailability poor."
+  pediatric: "No pediatric therapeutic use published."
+  safety_flags: ["no pediatric safety data", "senescence clearance during neurodevelopment unstudied"]
+  biomarker: "p16/SASP panel (indirect)."
+  scores:
+    1: [1, "Plausible sign, indirect: lower-risk senolytic stand-in for D+Q."]
+    2: [1, "Mouse/cell only."]
+    3: [0, "Not approved anywhere."]
+    4: [0, "No pediatric dosing precedent."]
+    5: [2, "Benign profile at intermittent supplement doses."]
+    6: [1, "Indirect only."]
+    7: [1, "In-vitro only."]
+
+n-acetylcysteine:
+  approval: "Approved (paracetamol overdose, mucolytic) in the US and EU."
+  formulation: "Oral solution/effervescent and IV; both used in children."
+  pediatric: "Established pediatric dosing guidance (weight-based, overdose protocol and mucolytic use)."
+  safety_flags: ["GI upset", "rare anaphylactoid reaction with IV"]
+  biomarker: "Redox panel / 8-oxo-dG (indirect); CBMN micronucleus frequency as phenotype readout."
+  scores:
+    1: [1, "Plausible sign at an indirect node: restores redox/proteostasis buffering in the CIN-microcephaly axis (PMID 41820377); the rescues in that paper were genetic, not pharmacologic."]
+    2: [1, "Model-organism rescue only."]
+    3: [2, "Approved with pediatric-appropriate oral and IV formulations."]
+    4: [2, "Established pediatric dosing guidance."]
+    5: [2, "Benign for chronic use; not immunosuppressive, not genotoxic, does not aggravate CIN."]
+    6: [1, "Redox markers are indirect target engagement."]
+    7: [1, "In-vitro: ROS/mitophagy readout in patient fibroblasts."]
+
+coenzyme q10:
+  approval: "Not an approved drug in the US/EU: dietary supplement (approved drug status only for the analogue idebenone)."
+  formulation: "Oral softgel/suspension; ubiquinol suspension used in children."
+  pediatric: "Published pediatric use in primary CoQ10 deficiency and mitochondrial disease; no formal guidance."
+  safety_flags: ["supplement QC variability", "warfarin interaction"]
+  biomarker: "Plasma CoQ10 level (direct for exposure, indirect for disease)."
+  scores:
+    1: [1, "Plausible sign, indirect mitochondrial-support node."]
+    2: [1, "Model/cell evidence only in this axis."]
+    3: [0, "Not an approved drug."]
+    4: [1, "Published pediatric use in another indication."]
+    5: [2, "Benign chronic profile."]
+    6: [1, "Indirect."]
+    7: [1, "In-vitro only."]
+
+idebenone:
+  approval: "Approved in the EU (Raxone, Leber hereditary optic neuropathy)."
+  formulation: "Oral tablet; crushable."
+  pediatric: "Used from age 12 in the LHON label and in pediatric Friedreich ataxia trials; no established guidance below that."
+  safety_flags: ["GI upset", "reversible chromaturia", "LFT monitoring"]
+  biomarker: "Redox/mito panel (indirect)."
+  scores:
+    1: [1, "Plausible sign at the mitochondrial-support node; short-chain quinone bypassing complex I."]
+    2: [1, "Model-organism/cell evidence in this axis; human evidence is in a different disease."]
+    3: [2, "Approved (EU) with an oral formulation usable in a child."]
+    4: [1, "Published pediatric use, other indication; no established guidance for a young child."]
+    5: [2, "Benign chronic profile with LFT monitoring."]
+    6: [1, "Indirect."]
+    7: [1, "In-vitro only."]
+
+metformin:
+  approval: "Approved worldwide (type 2 diabetes)."
+  formulation: "Oral solution and tablets; solution suits a young child."
+  pediatric: "Established pediatric dosing guidance from age 10 (T2D); published use younger."
+  safety_flags: ["GI intolerance", "B12 depletion on chronic use", "lactic acidosis (rare)"]
+  biomarker: "AMPK/ACC phosphorylation in PBMC (indirect)."
+  caution: >
+    AMPK-activation tension: AICAR, a direct AMPK activator, is HARD-VETOED under
+    rule (c) as aneuploidy-selective. Metformin is an indirect, far weaker AMPK
+    activator at clinical exposures with no reported aneuploidy-selective
+    lethality, so it is not vetoed — but this tension must be stated in the report
+    and is a named falsification target (patient-fibroblast viability curve).
+  scores:
+    1: [1, "Plausible sign, indirect: mitochondrial/AMPK-linked buffering in the proteostasis axis."]
+    2: [1, "Model-organism evidence only in this axis."]
+    3: [2, "Approved with a pediatric oral solution."]
+    4: [2, "Established pediatric dosing guidance."]
+    5: [1, "Tolerable with monitoring; B12 depletion on chronic use, plus the unresolved AMPK/AICAR tension above."]
+    6: [1, "Indirect target engagement."]
+    7: [1, "In-vitro: patient-fibroblast viability curve to test the aneuploidy-selectivity concern."]

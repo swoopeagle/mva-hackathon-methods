@@ -1,0 +1,9 @@
+# Sibling-disorder validation run. Pipeline is unchanged; only this file differs.
+case_id: sib-mad2l1bp
+gene: MAD2L1BP
+variants:
+  - class: stop_gained
+    zygosity: hom
+residual_protein: no
+age_band: child
+contraindications: []

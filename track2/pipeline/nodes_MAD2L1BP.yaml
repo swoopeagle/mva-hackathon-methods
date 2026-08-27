@@ -1,0 +1,41 @@
+# Mechanism node map — MAD2L1BP (p31comet).
+# HONEST RESULT: no direct drug node. Reported alleles are homozygous nonsense
+# -> no protein, so every stabilization lane is void by construction (the
+# residual-protein gate in directionality.py enforces this automatically).
+meta:
+  gene: MAD2L1BP
+  disorder: Mosaic aneuploidy with juvenile granulosa cell tumours
+  seed_has_approved_drugs: false
+  mechanism: >
+    p31comet works with TRIP13 to disassemble the mitotic checkpoint complex.
+    Biallelic nonsense -> mosaic aneuploidy, juvenile granulosa cell tumours at
+    11-14 months, polymicrogyria (JCI Insight 2023, PMID 37796616).
+no_direct_node: true
+nodes:
+  - id: sirt2_bubr1
+    label: SIRT2/BubR1 stabilization — offered so the gate can reject it
+    target_symbol: SIRT2
+    direction_needed: activate
+    objective: A
+    requires_residual_protein: true
+    gene_specific: false
+    rationale: >
+      Included to demonstrate the residual-protein gate: with a homozygous
+      nonsense genotype there is no protein to stabilise, so this lane must be
+      vetoed automatically rather than by hand.
+    pmids: [37796616]
+    drugs:
+      - name: Nicotinamide riboside
+  - id: proteostasis_mito
+    label: Generic aneuploidy buffering (Objective B) — NOT gene-specific
+    target_symbol: null
+    direction_needed: activate
+    objective: B
+    gene_specific: false
+    rationale: >
+      No MAD2L1BP-specific druggable node. Objective-B buffering only, plus the
+      surveillance lane (Objective C) which is not a drug.
+    pmids: [41820377, 37796616]
+    drugs:
+      - name: N-acetylcysteine
+      - name: Coenzyme Q10

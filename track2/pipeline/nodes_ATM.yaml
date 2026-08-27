@@ -1,0 +1,41 @@
+# Mechanism node map — ATM / ataxia-telangiectasia. POSITIVE CONTROL.
+# Curated from the same literature rules as the MVA maps, with no MVA-specific
+# tuning. If the pipeline is sound, NAD+ precursors must come out on top here.
+meta:
+  gene: ATM
+  disorder: Ataxia-telangiectasia (OMIM 208900)
+  seed_has_approved_drugs: false
+  mechanism: >
+    ATM loss -> defective DNA double-strand-break signalling, PARP
+    hyperactivation, NAD+ depletion and mitophagy failure. NAD+ replenishment
+    improved lifespan/healthspan and neurological phenotype in A-T models
+    (Cell Metab 2016) and long-term nicotinamide riboside improved coordination
+    and eye movements in A-T patients (Mov Disord 2024).
+
+nodes:
+  - id: nad_mitophagy
+    label: NAD+ depletion -> mitophagy failure (SIRT/PARP axis)
+    target_symbol: SIRT1
+    direction_needed: activate
+    objective: B
+    rationale: >
+      NAD+ augmentation restores mitophagy and rescues the neurological
+      phenotype in A-T models; human interventional data exist.
+    pmids: [27732836, 37899683, 27929719]
+    drugs:
+      - name: Nicotinamide riboside
+      - name: Nicotinamide
+
+  - id: proteostasis_mito
+    label: Mitochondrial dysfunction / oxidative stress buffering
+    target_symbol: null
+    direction_needed: activate
+    objective: B
+    rationale: >
+      Shared downstream buffering lane: oxidative and mitochondrial stress is a
+      convergent feature of genome-instability disorders.
+    pmids: [27929719]
+    drugs:
+      - name: N-acetylcysteine
+      - name: Coenzyme Q10
+      - name: Idebenone

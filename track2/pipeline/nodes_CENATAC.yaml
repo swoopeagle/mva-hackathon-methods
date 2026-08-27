@@ -1,0 +1,35 @@
+# Mechanism node map — CENATAC (=CCDC84) / MVA4.
+# HONEST RESULT: no direct drug node. CENATAC is NOT a SAC protein — it is a
+# MINOR (U12) spliceosome component (de Wolf, EMBO J 2021, PMID 34009673).
+# Splicing modulators that exist (risdiplam, branaplam) act on the MAJOR
+# spliceosome and do not address a minor-intron-retention defect; claiming them
+# would be a mechanism error, so the pipeline does not.
+meta:
+  gene: CENATAC
+  disorder: MVA4 (OMIM 620153)
+  seed_has_approved_drugs: false
+  mechanism: >
+    A-type minor-intron retention across ~100 cell-cycle and transport genes.
+    Low aneuploidy (7-9%), adult survivors, no cancer reported (n=2).
+    Alleles reported are splice-region (last 4 bp of exon + intronic deletion).
+no_direct_node: true
+excluded_by_mechanism:
+  - drug_class: "Major-spliceosome modulators (risdiplam, branaplam)"
+    reason: >
+      Approved/clinical splicing modulators target the MAJOR spliceosome (SMN2
+      exon 7 inclusion). CENATAC is a MINOR (U12) spliceosome component. Wrong
+      machine — listed as excluded rather than offered.
+nodes:
+  - id: proteostasis_mito
+    label: Generic aneuploidy buffering (Objective B) — NOT gene-specific
+    target_symbol: null
+    direction_needed: activate
+    objective: B
+    gene_specific: false
+    rationale: >
+      No CENATAC-specific druggable node. Only the shared Objective-B buffering
+      lane applies, and only weakly given the low aneuploidy fraction.
+    pmids: [41820377, 34009673]
+    drugs:
+      - name: N-acetylcysteine
+      - name: Coenzyme Q10

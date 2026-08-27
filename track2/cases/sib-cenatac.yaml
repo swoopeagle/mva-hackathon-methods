@@ -1,0 +1,9 @@
+# Sibling-disorder validation run. Pipeline is unchanged; only this file differs.
+case_id: sib-cenatac
+gene: CENATAC
+variants:
+  - class: splice_region
+    zygosity: hom
+residual_protein: unknown
+age_band: child
+contraindications: []

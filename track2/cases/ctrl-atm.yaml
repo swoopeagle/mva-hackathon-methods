@@ -1,0 +1,11 @@
+# POSITIVE CONTROL. A-T is the template shape (gene -> pathway -> node ->
+# cross-species rescue -> small human trial). The pipeline must recover
+# NAD+ precursors without any A-T-specific tuning.
+case_id: ctrl-atm
+gene: ATM
+variants:
+  - class: stop_gained
+    zygosity: hom
+residual_protein: likely
+age_band: child
+contraindications: []

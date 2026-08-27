@@ -1,0 +1,12 @@
+# Gene-agnostic n-of-1 case config. One file per case; the pipeline reads only this.
+# NOTE: fill with de-identified derivatives only -- never raw patient data in this repo.
+case_id: mva-child-01
+gene: TBD            # from Track 1 result
+variants:            # de-identified: gene-level variant class only until publication rules clear
+  - class: TBD       # e.g. nonsense / missense / splice / regulatory
+    zygosity: TBD    # het (in trans w/ ...) / hom
+residual_protein: unknown   # gates the BubR1-stabilization lane
+hpo_terms: []        # populated by local script from clinical doc; not committed
+age_band: child      # deliberately coarse
+contraindications: []
+sibling_validation_cases: [CEP57, CENATAC, MAD2L1BP, ATM]   # ATM = positive control

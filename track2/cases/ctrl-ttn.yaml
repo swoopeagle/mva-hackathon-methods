@@ -1,0 +1,10 @@
+# NEGATIVE CONTROL (scrambled seed gene). TTN is a large, variant-rich gene with
+# nothing to do with the SAC. MVA-specific candidates must NOT surface.
+case_id: ctrl-ttn
+gene: TTN
+variants:
+  - class: missense
+    zygosity: het
+residual_protein: likely
+age_band: child
+contraindications: []

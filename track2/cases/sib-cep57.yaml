@@ -1,0 +1,9 @@
+# Sibling-disorder validation run. Pipeline is unchanged; only this file differs.
+case_id: sib-cep57
+gene: CEP57
+variants:
+  - class: stop_gained
+    zygosity: hom
+residual_protein: unknown
+age_band: child
+contraindications: []

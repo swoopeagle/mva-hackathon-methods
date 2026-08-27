@@ -1,0 +1,17 @@
+# Confirmed case, de-identified. Derived facts only -- no raw patient data.
+case_id: mva-child-01
+gene: BUB1B
+variants:
+  - class: stop_gained
+    zygosity: het (in trans with the missense allele)
+    clinvar: P/LP
+  - class: missense
+    zygosity: het (in trans with the stop_gained allele)
+    clinvar: novel / not previously reported
+residual_protein: likely      # the missense allele is expected to make protein
+                              # -> the SIRT2/BubR1 stabilization lane stays open
+hpo_terms: []                 # populated locally; not committed
+age_band: child
+phenotype: MVA1 with cancer-fighting history
+contraindications: []
+sibling_validation_cases: [CEP57, CENATAC, MAD2L1BP, ATM]

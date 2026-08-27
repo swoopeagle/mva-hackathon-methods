@@ -1,0 +1,105 @@
+# Mechanism node map — BUB1B / MVA1.
+# Curated from research/track2-repurposing.md + research/mva-genetics-mechanism.md.
+# Every PMID below was resolved against PubMed; unverified citations are marked.
+meta:
+  gene: BUB1B
+  disorder: MVA1 (OMIM 257300)
+  seed_has_approved_drugs: false   # Open Targets returns 0 known drugs for BUB1B
+  mechanism: >
+    Biallelic BUB1B (BubR1) hypomorphism weakens the spindle assembly checkpoint
+    and the PP2A-B56 attachment-error-correction arm -> premature chromatid
+    separation, mosaic aneuploidy, embryonal cancer risk. BubR1 protein
+    ABUNDANCE is rate-limiting (PMID 23242215), which is what makes a
+    stabilization lane possible at all -- but only if an allele makes protein.
+
+nodes:
+  - id: sirt2_bubr1
+    label: SIRT2 deacetylation of BubR1 K668 -> blocks ubiquitin-mediated degradation
+    target_symbol: SIRT2
+    direction_needed: activate       # raise NAD+ -> SIRT2 activity -> BubR1 abundance
+    objective: A                     # reduce missegregation
+    requires_residual_protein: true  # nothing to stabilize if both alleles are null
+    rationale: >
+      BubR1 abundance is rate-limiting for aneuploidy protection and lifespan
+      (Baker, Nat Cell Biol 2013). SIRT2 deacetylates BubR1 K668 and raises its
+      abundance; NMN raises BubR1 in vivo (North, EMBO J 2014). Human precedent
+      for the NAD+ arm sits in a sibling genome-instability disorder: NAD+
+      replenishment rescued A-T models (Cell Metab 2016) and long-term
+      nicotinamide riboside improved coordination in A-T patients (Mov Disord 2024).
+    pmids: [23242215, 24825348, 27732836, 37899683]
+    drugs:
+      - name: Nicotinamide riboside
+      - name: Nicotinamide
+
+  - id: mtorc1
+    label: mTORC1 hyperactivation downstream of BubR1 insufficiency
+    target_symbol: MTOR
+    direction_needed: inhibit
+    objective: B                     # buffer downstream stress
+    rationale: >
+      BubR1-insufficient tissue shows hyperactive mTORC1 (Sieben et al., JCI
+      2020;130(1), verified). Independently, TOR
+      inhibition was one of the genetic/pharmacologic rescues of
+      CIN-induced microcephaly in the Drosophila proteostasis model
+      (Nat Commun 2026). Counterargument raised in-report: immunosuppression in
+      a cancer-predisposed, infection-prone child.
+    pmids: [41820377, 31738183]
+    # citation verified 2026-08-27: Sieben et al., "BubR1 allelic effects drive phenotypic
+    # heterogeneity in mosaic-variegated aneuploidy progeria syndrome", JCI 2020;130(1):171-188
+    # (jci.org/articles/view/126863) - hyperactive mTORC1 in skeletal muscle confirmed.
+    drugs:
+      - name: Sirolimus
+      - name: Everolimus
+
+  - id: senescence
+    label: Senescent-cell burden (the BubR1-H/H progeroid mouse founded senolytics)
+    target_symbol: null              # no single druggable protein node; multi-target
+    direction_needed: inhibit        # clear senescent cells
+    objective: B
+    rationale: >
+      Clearance of p16Ink4a-positive senescent cells delayed ageing-associated
+      disorders in the BubR1 progeroid mouse (Baker, Nature 2011) -- the founding
+      senolytics experiment used this exact genotype. Intermittent dosing is the
+      safety argument. No pediatric efficacy data; senescence clearance during
+      neurodevelopment is unstudied. Navitoclax deliberately excluded
+      (thrombocytopenia).
+    pmids: [22048312]
+    drugs:
+      - name: Dasatinib
+      - name: Quercetin
+      - name: Fisetin
+
+  - id: proteostasis_mito
+    label: Proteostasis failure -> mitophagy failure -> ROS (CIN microcephaly axis)
+    target_symbol: null              # axis, not a single target
+    direction_needed: activate       # restore mitochondrial/proteostatic homeostasis
+    objective: B
+    rationale: >
+      Proteostasis failure and mitochondrial dysfunction drive CIN-induced
+      microcephaly in Drosophila; rescued by Atg1 overexpression, TOR
+      inhibition, Hsp60, Sod2/GTPx-1 (Nat Commun 2026). Genetic rescues only --
+      no small molecule has been tested. Approved-reach stand-ins listed below.
+    pmids: [41820377]
+    drugs:
+      - name: N-acetylcysteine
+      - name: Coenzyme Q10
+      - name: Idebenone
+      - name: Metformin
+
+  # ---- deliberate probe node -------------------------------------------------
+  # MPS1/TTK is the apex SAC kinase directly upstream of BubR1, so an honest
+  # mechanism-network walk MUST surface it. It is here on purpose: negative
+  # control (b) requires that Mps1 inhibitors appear in evidence assembly and
+  # then get killed by the directionality vetoes. Drugs come live from the API.
+  - id: sac_kinase_mps1
+    label: MPS1/TTK -- apex SAC kinase upstream of BubR1 (network-walk probe)
+    target_symbol: TTK
+    direction_needed: inhibit        # the naive network reading; vetoes reject it
+    objective: A
+    probe: true
+    rationale: >
+      Surfaced by the mechanism walk (MPS1 -> KNL1-MELT -> BUB3-BUB1 -> BubR1).
+      Retained deliberately as negative control (b): a germline SAC-deficient
+      patient is exactly who must not receive further checkpoint inhibition.
+    pmids: [39169218]
+    drugs: []                        # populated live from Open Targets
