@@ -371,7 +371,7 @@ pipeline/03_targeted.sh norm.chr.vcf.gz pipeline/mva_genes.bed out/targeted_nofi
 pipeline/04_mosaic.py norm.chr.vcf.gz > out/mosaic_baf.tsv
 
 # 6. Build the submission (schema, EPCR monotonicity, chr-prefix, <=10 rows enforced)
-pipeline/05_submission.py rows.tsv EX2312012 > swoopeagle_<model>.csv
+pipeline/05_submission.py rows.tsv PROBAND01 > swoopeagle_<model>.csv
 ```
 
 **Determinism.** Every stage is a fixed command over fixed input; there is no sampling, no
