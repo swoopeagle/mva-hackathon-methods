@@ -1,4 +1,8 @@
-# Track 1 Methods Description Form — Draft Answers
+# Track 1 Methods Description Form — Answers
+
+> **Result (submission 1, 2026-08-27): Rank points 100.0/100 · F-max 1.000 · full match at
+> rank 1.** Both metrics are at ceiling on the first scored submission; the remaining five
+> slots were deliberately left unspent.
 
 *Paste-ready text for the official methods xlsx. One form per model (up to 6 models).
 Model-specific fields are marked; everything else is stable across models.*
@@ -79,6 +83,36 @@ partially-correct pair degrades to half credit instead of to nothing.
 **Stage 5 — Emission.** `05_submission.py` writes the official schema and asserts: ≤ 10
 rows; EPCR in (0,1] and monotone non-increasing with rank; chr prefix present on both
 members of every row; `finding_type ∈ {primary, secondary}`.
+
+---
+
+**Stage 3 — Independent whole-genome non-coding pass.** Exomiser 15.1.0 `--preset genome`
+with ReMM v0.4 hg38 (md5-verified) over all 4,962,060 variant records. BUB1B reproduced at
+rank 1 of 492 genes, with exactly the same two coding alleles and **no non-coding BUB1B
+variant of any class**. This negative is load-bearing rather than vacuous: in the same run,
+44 other genes received a *contributing* non-coding variant (13 regulatory_region, 14
+intergenic, 19 upstream, 5 downstream, plus UTR and intronic), with non-coding-driven genes
+ranking as high as 3. The pass could surface a non-coding allele and did not find one here.
+
+**Stage 4 — Panel-wide exclusion.** The no-filter sweep was extended to all nine MVA genes
+(~1.8 Mb including flanks), gnomAD v4.1-joined, strand-aware. Across the eight non-BUB1B
+genes there is **not one rare coding variant**; all 19 rare variants are intronic or
+intergenic, and SpliceAI on all 21 rare non-candidates gave a panel-wide maximum delta of
+0.02. No competing biallelic hypothesis exists on the panel.
+
+**Stage 5 — Orthogonal mosaicism corroboration.** Per-chromosome B-allele-frequency analysis
+at heterozygous sites shows band-splitting on five different chromosomes (chr9, 17, 20, 21,
+22: 0.32–0.44 of sites outside a 0.40–0.60 band, against a 0.25–0.28 diploid baseline) —
+the variegated multi-chromosome mosaic-aneuploidy signature that a BUB1B checkpoint defect
+predicts. This contributes no rank points; it is independent confirmation that the genotype
+and the observed cytogenetics agree.
+
+**Confirmed alleles.** chr15:40209701 T>G = c.2210T>G p.(Leu737*), stop_gained, exon 17/23,
+NMD-predicted, ClinVar 533901 P/LP; chr15:40220612 T>G = c.3006T>G p.(Asn1002Lys), missense,
+final exon (NMD-escaping, so residual protein expected), within the kinase domain,
+1/1,112,006 in gnomAD. SpliceAI excludes a cryptic splice effect for both (delta 0.03/0.02).
+The truncation removes the entire kinase domain (UniProt O60566 residues 766–1050) including
+ATP-binding Lys795 and catalytic Asp882.
 
 ---
 
