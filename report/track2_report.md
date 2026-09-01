@@ -615,7 +615,7 @@ under the same veto (c) that removed AICAR. This is not a formality — see belo
 The pre-registered rubric contains a hard veto (c): *aneuploidy-selective lethality as
 chronic systemic therapy*. That veto exists because compounds that preferentially kill
 aneuploid cells — AICAR, 17-AAG, chloroquine (Tang et al., *Cell* 2011, PMID 21315436) —
-are pointed at the wrong target in this patient. Her own somatic tissue is mosaically
+are pointed at the wrong target in this patient. The child's own somatic tissue is mosaically
 aneuploid. As chronic systemic therapy, an aneuploidy-selective agent is self-directed
 cytotoxicity. The pipeline hard-vetoes AICAR on that basis and never scores it.
 
