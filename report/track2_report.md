@@ -2,7 +2,7 @@
 
 **Rare Disease, Real Kid: The MVA Hackathon 2026**
 
-Team: swoopeagle · Proband: EX2312012 · Gene: *BUB1B* (MVA type 1)
+Team: swoopeagle · Proband: PROBAND01 · Gene: *BUB1B* (MVA type 1)
 
 ---
 
@@ -1731,6 +1731,36 @@ possesses.
 - The repository was audited before publication against a written checklist covering patient
   coordinates, HPO terms, proband identifiers in file paths, local data paths, credentials, and
   the presence of any sequence-data file. The audit is re-run before every push.
+
+---
+
+### AI assistant disclosure
+
+Per the challenge's methods-description requirement (added 28 August 2026):
+
+**Provider and model:** Anthropic Claude, used via Claude Code (Opus and Fable model tiers).
+**Plan/tier:** [CONFIRM BEFORE SUBMISSION — Ian's Claude subscription tier.]
+**Data-handling setting:** Consumer subscription terms.
+
+**How it was used, and the boundary we enforced.** Claude was used substantially: literature
+synthesis, code authorship for both pipelines, drafting and editing of these reports, and
+orchestration of parallel research agents. It was *not* used as an oracle for the variant
+call — the Track 1 ranking is produced by deterministic tools (Exomiser, bcftools, SpliceAI)
+with no model call anywhere in the ranking path.
+
+**No patient data was ever sent to a hosted LLM API.** This was an architectural decision
+made at the outset, in response to the organisers' guidance to interpret the data-use clauses
+conservatively pending formal clarification. Concretely: the gated VCF, FASTQ, clinical
+phenotype document, HPO term list, and every derived file remained on local disk and were
+processed only by locally-executed tools. Scripts bridged files to tools; the assistant's
+context received only aggregates, variant *classes*, gene symbols, scores, and the two
+*BUB1B* allele coordinates that appear in our public submission by design. Phenotype terms
+were extracted from the clinical document by a local script and written directly into an
+Exomiser phenopacket without ever being displayed to or read by the model.
+
+Every PMID cited in this report was verified programmatically against the NCBI PubMed API
+rather than trusted from model output; this check caught and corrected several incorrect
+citations during drafting, including two in an early draft of our own mechanism section.
 
 ---
 
