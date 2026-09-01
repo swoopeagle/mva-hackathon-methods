@@ -12,6 +12,6 @@ residual_protein: likely      # the missense allele is expected to make protein
                               # -> the SIRT2/BubR1 stabilization lane stays open
 hpo_terms: []                 # populated locally; not committed
 age_band: child
-phenotype: MVA1 with cancer-fighting history
+phenotype: MVA1; oncologic status per challenge public description (see report 7.2)
 contraindications: []
 sibling_validation_cases: [CEP57, CENATAC, MAD2L1BP, ATM]

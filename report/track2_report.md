@@ -49,7 +49,8 @@ inference throughout, and we specify the experiment that would settle it (§4, �
 
 **Chosen therapeutic objective.** We adopt a four-part taxonomy of what a repurposing effort
 in MVA could be attempting (§2) and select **Objective B — buffering the downstream
-consequences of aneuploidy in surviving cells** — as the lead lane, with Objective C (cancer
+consequences of aneuploidy in surviving cells** — as the lead lane, with the one indirect
+Objective-A route (raising the level of residual BubR1) carried alongside it, as §2 explains, with Objective C (cancer
 surveillance and radiation stewardship, §7) as a concurrent, non-pharmacological
 recommendation. Objective A (restoring mitotic fidelity) is largely closed: the available
 pharmacology in that space *increases* chromosome missegregation, which in a
@@ -60,17 +61,20 @@ was generated (`track2/RUBRIC.md`), the surviving candidates rank as follows:
 
 | Rank | Candidate | Mechanistic node | Objective | Score |
 |---|---|---|---|---|
-| 1 | Nicotinamide | NAD⁺ → SIRT2 → BubR1 stabilisation | A/B | **21/26** |
-| 2 | Nicotinamide riboside | NAD⁺ → SIRT2 → BubR1 stabilisation | A/B | 20/26 |
+| 1 | Nicotinamide | NAD⁺ → SIRT2 → BubR1 stabilisation | A† | **21/26** |
+| 2 | Nicotinamide riboside | NAD⁺ → SIRT2 → BubR1 stabilisation | A† | 20/26 |
 | 3 | N-acetylcysteine | proteostasis / mitochondrial buffering | B | 19/26 |
 | 4= | Idebenone | proteostasis / mitochondrial buffering | B | 17/26 |
 | 4= | Metformin | proteostasis / mitochondrial buffering | B | 17/26 |
+
+† The pipeline records this node as Objective A; §2 explains why it is best understood as
+straddling A and B (it acts on mitotic fidelity, but indirectly, by raising residual protein).
 
 **The rubric produced a result we did not anticipate and did not argue for.** Nicotinamide
 riboside has the more direct mechanistic evidence for the SIRT2→BubR1 axis and wins the
 directionality criterion outright (2 versus 1). It nonetheless finishes *second*, because it
 is a nutritional supplement with no drug approval in any jurisdiction and no established
-paediatric dosing, while plain nicotinamide is an approved medicine with paediatric dosing
+pediatric dosing, while plain nicotinamide is an approved medicine with pediatric dosing
 guidance and decades of exposure. Because the weights were fixed in advance, this is a
 finding rather than a preference: **for a child who would need chronic administration under
 physician supervision, the cheaper and more feasible member of the pair is the better
@@ -108,7 +112,7 @@ what prevents this report from becoming a ranked list of associations.
 | | Objective | Target of intervention | Principal hazard |
 |---|---|---|---|
 | **A** | Reduce ongoing chromosome missegregation | mitotic fidelity | most agents acting on mitosis *increase* chromosomal instability |
-| **B** | **Buffer downstream stress in aneuploid cells** | cell survival, stemness, proteostasis | best-supported and lowest-risk lane; effects are indirect |
+| **B** | **Buffer downstream stress in aneuploid cells** | cell survival, stemness, proteostasis | effects are indirect; no disease-specific efficacy data exists |
 | **C** | Cancer chemoprevention and surveillance | tumour initiation and early detection | interventions must not be immunosuppressive |
 | **D** | Symptomatic and supportive care | individual organ systems | standard of care, not repurposing |
 
@@ -141,11 +145,11 @@ bystander euploid cells** (PMID 36322655). We flag this as mechanistically impor
 therapeutically premature: the plausible interventions are immunomodulatory, and Objective C
 constrains us against immunosuppression in this population.
 
-**Objective C is real, actionable today, and not pharmacological.** Roughly one third of MVA
-patients develop malignancy, characteristically before age five, and *BUB1B* is the
-highest-risk subtype. The correct response is a surveillance schedule and a radiation-
+**Objective C is real, actionable today, and not pharmacological.** Malignancy is reported in
+~39% (12/31) of published MVA1 cases (PMID 35804254), characteristically before age five, and
+*BUB1B* is the highest-risk subtype. The correct response is a surveillance schedule and a radiation-
 stewardship policy, both of which already have published guidance (§7). We include it because
-it is the intervention in this report most likely to benefit the child, and because a
+it is the only intervention in this report backed by published guidance rather than mechanistic inference, and because a
 repurposing proposal that ignores the dominant near-term risk to the patient is not a serious
 clinical document.
 
@@ -297,10 +301,10 @@ exon-exon junction complex is efficiently degraded, while a codon change in the 
 escapes NMD and is translated. Applied here, allele 1 is expected to contribute little or
 no protein, and allele 2 is expected to contribute a full-length protein carrying a single
 substitution. That is why the case file records `residual_protein: likely` — and why the
-SIRT2/BubR1 stabilization lane, which stabilizes protein that already exists, is offered
+SIRT2/BubR1 stabilisation lane, which stabilises protein that already exists, is offered
 at all. **The residual-protein call is an inference from variant position, not a
 measurement.** It is unproven without a BubR1 western blot on patient cells. If it is
-wrong — if `p.(Asn1002Lys)` is itself destabilizing and the cell makes no appreciable
+wrong — if `p.(Asn1002Lys)` is itself destabilising and the cell makes no appreciable
 BubR1 — then candidates 4.1 and 4.2, the two highest-scoring chains in this report,
 collapse and only the Objective B buffering lane survives. We restate this at every
 chain rather than assert it once, because it is the single assumption that carries the
@@ -655,7 +659,7 @@ Three drugs tie at **15/26** — above the cutoff of 13, below the five chains a
 they tie for the same reason. All three score **C5 = 0**, the pre-registered floor for
 "immunosuppressive/genotoxic or CIN-aggravating" chronic use. C5 is weighted ×2, so a zero
 there costs four weighted points and moves a candidate from the top of the list to the
-middle of it. This is the second finding we want a judge to see, because the rubric
+middle of it. This is the second place the rubric produced a result we did not choose, because the rubric
 converted a safety judgement into an arithmetic one and the arithmetic held.
 
 **The real case for them — which is strong, and stronger than for anything in §4.3–4.5.**
@@ -719,9 +723,13 @@ single haematopoietic stem-cell transplant. A ranking of untested hypotheses is 
 agenda, not a treatment plan, and §6 exists because a hypothesis without a readout is
 worth nothing.
 
+---
+
 ## 5. Rejected and deprioritized hypotheses
 
-*This section was written before §4 was finalised. The rejects discipline the shortlist:
+**How to read this table.** Three dispositions appear below. *Vetoed this run* means the agent surfaced the drug from a live database call and the directionality filter rejected it — this happened to three compounds (two Mps1/TTK inhibitors and one further sign failure). *Armed, not triggered* means the veto rule exists and would fire, but no drug of that class entered this particular assembly; those rows document the reasoning, not a kill. *Below cutoff* means the candidate was scored and fell under 13/26. Conflating the three would overstate what the filter did here.
+
+*The rejects discipline the shortlist:
 in a condition where the seed gene returns zero approved drugs from every database we
 queried, the informative work is not producing a list — any knowledge-graph ranker will
 produce a list — it is deciding, with a stated reason, what must not be on it.*
@@ -742,17 +750,17 @@ Three classes of decision are reported here, and they are not the same kind of d
 
 | Hypothesis | Class / node | Disposition | Why it was killed |
 |---|---|---|---|
-| **BAY-1161909**, **BAY-1217389** | Mps1/TTK inhibitors, node `sac_kinase_mps1` | **Hard veto (a) + (b)** — surfaced live from Open Targets, then removed before scoring | The pipeline was made to find these. MPS1 is the apex SAC kinase directly upstream of BubR1 (PMID 39169218), so an honest mechanism walk *must* surface it — the `sac_kinase_mps1` node is in `nodes_BUB1B.yaml` as a deliberate probe, with its drug list populated live rather than hand-written. Both compounds duly appeared (Phase 1, "Dual specificity protein kinase TTK inhibitor") and both were vetoed: further inhibiting the apex SAC kinase in a patient whose SAC is *already germline-deficient* increases missegregation (veto a) and presumes checkpoint competence she does not have (veto b). This is negative control (b) from the pre-registered list, and it passed. |
+| **BAY-1161909**, **BAY-1217389** | Mps1/TTK inhibitors, node `sac_kinase_mps1` | **Hard veto (a) + (b)** — surfaced live from Open Targets, then removed before scoring | The pipeline was made to find these. MPS1 is the apex SAC kinase directly upstream of BubR1 (PMID 39169218), so an honest mechanism walk *must* surface it — the `sac_kinase_mps1` node is in `nodes_BUB1B.yaml` as a deliberate probe, with its drug list populated live rather than hand-written. Both compounds duly appeared (Phase 1, "Dual specificity protein kinase TTK inhibitor") and both were vetoed: further inhibiting the apex SAC kinase in a patient whose SAC is *already germline-deficient* increases missegregation (veto a) and presumes checkpoint competence it does not have (veto b). This is negative control (b) from the pre-registered list, and it passed. |
 | **Aurora kinase inhibitors** (alisertib, barasertib, danusertib, tozasertib, MLN8054, chiauranib) | Aurora A/B, mitotic fidelity | **Hard veto (a)** | Aurora A/B inhibition degrades kinetochore–microtubule error correction and increases chromosome missegregation. In a child whose entire pathology is missegregation, this is the wrong sign at the correct node — the most seductive failure mode in this disease, because a naive network walk scores "mitotic kinase in the SAC neighbourhood" as a hit. |
 | **KIF11/KSP inhibitors** (ispinesib, filanesib, litronesib, SB-743921) | Kinesin spindle protein | **Hard veto (a) + (b)** | Monopolar-spindle agents kill via SAC-dependent mitotic arrest. Germline SAC-deficient cells escape the arrest and exit mitosis with massive missegregation instead — the drug's cytotoxic mechanism is disabled and its mutagenic side is not. |
-| **Taxanes and vinca alkaloids** (paclitaxel, docetaxel, cabazitaxel, vincristine, vinblastine, vinorelbine, eribulin) | Microtubule-targeting agents | **Hard veto (a) + (b)** | Two independent failures. *Wrong lesion:* increased microtubule assembly rates drive CIN in the colorectal-cancer setting where low-dose taxol was proposed as a corrective (Ertych et al., *Nat Cell Biol* 2014, PMID 24976383); this child's lesion is checkpoint failure, not microtubule hyper-stability, so the mechanism is real but pointed at a different defect. *Wrong dependency:* these agents require an intact SAC to arrest, which is precisely what she lacks. Note this is a veto of the *hypothesis*, not clinical guidance — vincristine and related agents remain part of standard oncology protocols should a malignancy arise, and that decision belongs to a treating oncologist, not to this report. |
+| **Taxanes and vinca alkaloids** (paclitaxel, docetaxel, cabazitaxel, vincristine, vinblastine, vinorelbine, eribulin) | Microtubule-targeting agents | **Hard veto (a) + (b)** | Two independent failures. *Wrong lesion:* increased microtubule assembly rates drive CIN in the colorectal-cancer setting where low-dose taxol was proposed as a corrective (Ertych et al., *Nat Cell Biol* 2014, PMID 24976383); this child's lesion is checkpoint failure, not microtubule hyper-stability, so the mechanism is real but pointed at a different defect. *Wrong dependency:* these agents require an intact SAC to arrest, which is precisely what this child lacks. Note this is a veto of the *hypothesis*, not clinical guidance — vincristine and related agents remain part of standard oncology protocols should a malignancy arise, and that decision belongs to a treating oncologist, not to this report. |
 | **Low-dose taxanes as a CIN-normalising strategy** | Microtubule dynamics | **Hard veto (a) + (b)**, same rule | Called out separately because it is the plausible-sounding version. The published rationale — restoring normal microtubule assembly rates to reduce missegregation (PMID 24976383; and the same logic in later work) — is sound biology in the cells it was developed in. It is a mechanism for *hyperstable microtubules*, not for a hypomorphic checkpoint kinase, and applying it here would be lesion-matching by keyword. |
-| **AICAR / acadesine, 17-AAG / tanespimycin, chloroquine and hydroxychloroquine, HSP90 inhibitors** | Aneuploidy-selective compounds | **Hard veto (c)** | These kill aneuploid cells preferentially (Tang et al., *Cell* 2011, PMID 21315436). The patient's *own somatic tissue* is mosaically aneuploid, so as chronic systemic therapy this is self-directed cytotoxicity against the very cells that constitute her body. The sign is inverted relative to the intent: an agent developed to exploit aneuploidy in a tumour becomes an agent that attacks the patient in a constitutional aneuploidy syndrome. Rational only as *tumour-directed* therapy, in which case it is oncology, not repurposing. See §4.5.6 for the metformin tension this veto creates and how we propose to resolve it. |
+| **AICAR / acadesine, 17-AAG / tanespimycin, chloroquine and hydroxychloroquine, HSP90 inhibitors** | Aneuploidy-selective compounds | **Hard veto (c)** | These kill aneuploid cells preferentially (Tang et al., *Cell* 2011, PMID 21315436). The patient's *own somatic tissue* is mosaically aneuploid, so as chronic systemic therapy this is self-directed cytotoxicity against the very cells that constitute the child's body. The sign is inverted relative to the intent: an agent developed to exploit aneuploidy in a tumour becomes an agent that attacks the patient in a constitutional aneuploidy syndrome. Rational only as *tumour-directed* therapy, in which case it is oncology, not repurposing. See §4.5.6 for the metformin tension this veto creates and how we propose to resolve it. |
 | **TRIP13 inhibitors** (DCZ0415) | TRIP13 / MCC disassembly | **Hard veto (a)**, plus unapproved | Wrong direction of effect, and a clean example of the LoF/GoF error the directionality filter exists to catch. MVA *TRIP13* alleles are complete loss-of-function; TRIP13 inhibitors were developed against TRIP13 **over**expression in cancer. Inhibiting TRIP13 further reduces MCC disassembly capacity and worsens mitotic error. A pipeline that matches on gene symbol alone will propose a TRIP13 inhibitor for a TRIP13 patient and be exactly backwards. DCZ0415 is also unapproved, so it would have failed C3 even if the sign had been right. |
 | **Reversine; PLK4 inhibitors (centrinone)** | SAC-abrogating tool compounds | **Hard veto (a) + (b)** | Directly abrogate checkpoint signalling or centriole duplication. These are tool compounds for *inducing* the phenotype this child has. |
 | **INDOXIMOD** | node `mtorc1` | **Hard veto — wrong sign**, caught live | Not on any hand-written blocklist. The `mtorc1` node requires inhibition; Open Targets annotates indoximod as an **ACTIVATOR** of mTORC1, and the sign check removed it on the API's own annotation. We report this because it is evidence that the directionality filter does real work rather than restating a blocklist we wrote ourselves. |
 | **Fisetin** | Senolytics, node `senescence` | **Below cutoff — 11/26** | Scored, and failed. Fisetin is the lower-risk senolytic stand-in for dasatinib + quercetin and it scores well on chronic safety (C5 = 2, benign at intermittent supplement doses), but it takes a **zero on C3 (not approved anywhere)** and a **zero on C4 (no pediatric dosing precedent published)** — eight weighted points lost on deliverability alone — and its evidence is mouse/cell only (C2 = 1). 11 < 13, so it is reported here rather than in §4. |
-| **Quercetin (13/26), Coenzyme Q10 (13/26)** | `senescence`, `proteostasis_mito` | **At cutoff — carried but not argued** | Both land exactly on the 13/26 line, both for the same reason as fisetin: C3 = 0, unapproved supplements with no therapeutic pediatric dosing precedent. CoQ10 is the supplement analogue of idebenone (§4.4), which is EU-approved and therefore scores four points higher on approval; quercetin is dasatinib's senolytic partner and inherits the senescence node's unstudied-in-neurodevelopment problem without dasatinib's approval status. Neither earned a five-part chain. |
+| **Quercetin (13/26), Coenzyme Q10 (13/26)** | `senescence`, `proteostasis_mito` | **At cutoff — carried but not argued** | Both land exactly on the 13/26 line, both for a reason related to fisetin's: C3 = 0, unapproved supplements with no therapeutic pediatric dosing precedent. CoQ10 is the supplement analogue of idebenone (§4.4), which is EU-approved and therefore scores four points higher on approval; quercetin is dasatinib's senolytic partner and inherits the senescence node's unstudied-in-neurodevelopment problem without dasatinib's approval status. Neither earned a five-part chain. |
 | **Navitoclax** | Senolytics | **Excluded at curation** | Excluded before it reached the pipeline, on thrombocytopenia — a dose-limiting, mechanism-based toxicity that is unacceptable in a child with marrow vulnerability and MDS risk. Recorded here so the exclusion is visible rather than silent. |
 | **KIF18A inhibitors** | CIN-synthetic-lethal | **Out of scope, not vetoed** | Conceptually the most interesting class for MVA-*associated tumours*: KIF18A is dispensable in diploid cells and required in chromosomally unstable ones. That is the same aneuploidy-selective logic as veto (c), so it must not be chronic systemic therapy in a patient whose normal tissue is aneuploid — but unlike AICAR it is worth naming as a *tumour-directed* option for an oncologist to consider if a malignancy arises. It is not a repurposing candidate for this child today and was not scored. |
 | **25 mTOR-pathway analogues from the live API walk** | node `mtorc1` | **Not scored — deliberately** | APITOLISIB, AZD-8055, BGT-226, CC-115, DACTOLISIB, DS-3078A, DS-7423, GEDATOLISIB, OMIPALISIB, ONATASERTIB, OSI-027, PALOMID-529, PANULISIB, PERHEXILINE, PERHEXILINE MALEATE, PF-04691502, PKI-179, RG-7603, RIDAFOROLIMUS, SAMOTOLISIB, SAPANISERTIB, SF-1126, VISTUSERTIB, VOXTALISIB, VS-5584. All surfaced from Open Targets on the mTOR node with the correct sign (INHIBITOR), and all were left **unscored** because `drug_facts.yaml` contains no curated approval, formulation, pediatric-dosing or safety facts for them. Scoring them would have meant guessing four of seven criteria per drug. A 35-candidate table would have looked more impressive and been worth less; the full list with ChEMBL IDs and development stages is in `track2/out/mva-child-01/report_data.json`. Several are Phase 1/2 oncology agents that would in any case fail C3 and C4 for a young child. |
@@ -937,7 +945,9 @@ inference. Stating which lanes support which design is part of the design.
 
 **It can establish:**
 
-- Whether the agent engaged its target in *this* patient (NAD⁺ rose; p-S6 fell).
+- Whether the agent engaged its target in *this* patient (NAD⁺ rose; p-S6 fell). The governance precedent for individualised
+intervention in an ultra-rare disease is milasen (PMID 31597037), which we cite for its
+regulatory and ethical process rather than its pharmacology.
 - Whether the agent was tolerated in *this* patient, on *these* laboratory measures, over *this*
   duration.
 - Whether the primary PD marker moved in *this* patient beyond that patient's own documented
@@ -1023,11 +1033,25 @@ of SAC failure tracks embryonal cancer risk, and centrosomal (*CEP57*) or splice
 
 ### 7.2 Why this matters specifically for this child
 
+**What we know, and do not know, about this child's own oncologic status.** The challenge's
+public description states that care for this child today "means managing symptoms and fighting
+cancer cells." We therefore do not treat malignancy here as a purely prospective risk, and we
+have deliberately not speculated beyond that single public sentence: the dataset we were given
+contains no oncologic history, no treatment record, and no tumour sequencing. This matters in
+three places. It is an additional argument against the immunosuppressive candidates discussed
+in 4.6, whose chronic-use safety score is already zero. It means the surveillance schedule
+below should be read as a statement of what published guidance recommends for this population
+rather than as advice about a child whose clinical course we cannot see. And it is a reason the
+n-of-1 design in 6 is framed around a pharmacodynamic readout that can be measured from a blood
+draw alongside existing care, rather than around anything that would compete with oncologic
+management. A treating team has information we do not, and the appropriate use of this report
+is as input to that team, not as a parallel plan.
+
 **This child is *BUB1B* compound heterozygous — the highest-risk subtype in the guidance.**
 
 Across published MVA1 cases, malignancy has been reported in **12 of 31 (38.7%)** in the most
 recent systematic reappraisal (Pavone et al., *Neurol Sci* 2022, PMID 35804254; cases spanning
-1988-2018), with onset
+1988–2018), with onset
 almost always before age 5. The reported spectrum is embryonal and haematological:
 
 - **Wilms tumour** (nephroblastoma) — the reason the renal ultrasound schedule exists;
@@ -1038,10 +1062,14 @@ almost always before age 5. The reported spectrum is embryonal and haematologica
 The gene–cancer association traces to the original description of biallelic *BUB1B* mutation as a
 constitutional aneuploidy and cancer-predisposition syndrome (Hanks et al., *Nat Genet* 2004,
 PMID 15475955), with the phenotypic range subsequently extended to include gastrointestinal
+- Pavone P, Praticò AD, Falsaperla R, et al. Pathogenic correlation between mosaic
+  variegated aneuploidy 1 (MVA1) and a novel BUB1B variant: a reappraisal of a severe
+  syndrome. *Neurol Sci* 2022;43(11):6529–6538. PMID 35804254. (Cumulative malignancy rate
+  12/31 = 38.7% is from the paper's case table, not its abstract.)
 neoplasia in an attenuated presentation (Rio Frio et al., *N Engl J Med* 2010, PMID 21190457).
 Allelic effects on phenotype severity within *BUB1B* MVA are documented in Sieben et al., *J Clin
 Invest* 2020 (PMID 31738183). The condition as a whole — genetics, ageing phenotype, and cancer
-risk — is reviewed in *Nat Rev Genet* 2024 (PMID 39169218). The cumulative malignancy rate across published MVA1 cases (12/31, 38.7%) is from Pavone et al., *Neurol Sci* 2022, PMID 35804254.
+risk — is reviewed in *Nat Rev Genet* 2024 (PMID 39169218).
 
 Two practical consequences follow, and neither is a research proposal:
 
@@ -1119,10 +1147,10 @@ variants:
     zygosity: het (in trans with the stop_gained allele)
     clinvar: novel / not previously reported
 residual_protein: likely      # the missense allele is expected to make protein
-                              # -> the SIRT2/BubR1 stabilization lane stays open
+                              # -> the SIRT2/BubR1 stabilisation lane stays open
 hpo_terms: []                 # populated locally; not committed
 age_band: child
-phenotype: MVA1 with cancer-fighting history
+phenotype: MVA1; see 7.2 on oncologic status
 contraindications: []
 sibling_validation_cases: [CEP57, CENATAC, MAD2L1BP, ATM]
 ```
@@ -1316,6 +1344,11 @@ reported here because it was not anticipated.
 
 ### 9.3 Positive control — ATM / ataxia-telangiectasia recovers NAD⁺ precursors
 
+*A note on wording: `RUBRIC.md` pre-registered this as a "leave-one-out on ATM/A-T"; it was
+executed as an independent ATM case run, which is the stronger form of the same test — the
+pipeline is given no A-T-specific tuning and must recover the answer from its general
+machinery.*
+
 `cases/ctrl-atm.yaml`. A-T is the template shape this field rewards — gene → pathway → node →
 cross-species rescue → small human trial — and the pipeline was not tuned for it. The ATM node
 map was written to the same schema as the others, with no A-T-specific parameters and no changes
@@ -1339,6 +1372,12 @@ in a disorder it was not built for, through the same node-walk-then-filter path.
 show the pipeline would have *discovered* that answer — the A-T node map was curated by people who
 know the A-T literature, and curation is where the knowledge enters. The control tests the
 machinery around the curation, which is the part that is reusable.
+
+*One caveat a reviewer will notice: the ATM run returns the same numeric scores as the BUB1B
+case (21/20/19/17/13). This is expected — scoring is drug-level, applied to a shared curated
+fact base, so two cases that route to the same node inherit the same feasibility and safety
+scores. What differs between the runs is which nodes are reachable and which survive the
+directionality gate, not the per-drug arithmetic.*
 
 ### 9.4 Sibling MVA genes — three genes that correctly produce no gene-specific candidate
 
@@ -1734,7 +1773,7 @@ possesses.
 
 ---
 
-### AI assistant disclosure
+## 11a. AI assistant disclosure
 
 Per the challenge's methods-description requirement (added 28 August 2026):
 
@@ -1779,8 +1818,11 @@ citations during drafting, including two in an early draft of our own mechanism 
 
 - **No re-identifying information.** This report contains no information that could re-identify
   the child or family beyond what the family has themselves made public through the challenge's
-  own communications. Variant-level detail is limited to variant class; no HPO identifiers, no
-  genomic coordinates beyond those already published in the challenge's own materials.
+  own communications. Variant-level detail is limited to HGVS nomenclature, public
+  database accessions and population frequencies that are already public in ClinVar and
+  gnomAD, together with the two coordinates that form our Track 1 submission and are released
+  under the challenge's own CC-BY terms. No HPO identifiers appear anywhere in this report,
+  and the committed case configuration carries variant *class* only.
 - **Dataset citation.** The challenge dataset is cited per the citation string given on its
   Synapse page. **TODO-at-submission:** copy the exact citation string from the Synapse dataset
   page and paste it here verbatim before submitting. Do not paraphrase it and do not reconstruct
@@ -1892,7 +1934,7 @@ swoopeagle (2026). A variant-aware, gene-agnostic n-of-1 drug-repurposing pipeli
 applied to a child with BUB1B-associated mosaic variegated aneuploidy.
 Track 2 submission to "Rare Disease, Real Kid: The MVA Hackathon 2026"
 (Sage Bionetworks / MVA Society / Hugging Face / BEACON).
-https://github.com/swoopeagle/<public-repo>   Licensed CC-BY-4.0.
+https://github.com/swoopeagle/mva-hackathon-methods   Licensed CC-BY-4.0.
 ```
 
 **These are hypotheses for further investigation. They are not treatment recommendations and not
