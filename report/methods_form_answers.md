@@ -311,9 +311,10 @@ a clinical diagnosis.
 
 Per the challenge's methods-description requirement (added 28 August 2026):
 
-**Provider and model:** Anthropic Claude, used via Claude Code (Opus and Fable model tiers).
-**Plan/tier:** [CONFIRM BEFORE SUBMISSION — Ian's Claude subscription tier.]
-**Data-handling setting:** Consumer subscription terms.
+**Provider and model:** Anthropic Claude via Claude Code — Claude Fable 5 (orchestration)
+and Claude Opus 5 (execution subagents).
+**Plan/tier:** Claude Max (5x) subscription.
+**Data-handling setting:** Consumer subscription terms; no patient data sent to the API (see below).
 
 **How it was used, and the boundary we enforced.** Claude was used substantially: literature
 synthesis, code authorship for both pipelines, drafting and editing of these reports, and
